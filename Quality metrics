@@ -1,0 +1,81 @@
+Quality metrics
+In order to make the OpenStreetMap(OSM) self reliable intrinsic quality is assessed. There are three important quality metrics is developed that can help the humanitarian organisation after reviewing literature and interviews with Red Cross officials and Humanitarian OpenStreetMap Team (HOT). 
+QM-1: Tag completeness of critical infrastructure
+QM-2: Reliability of meta-data
+QM-3: Experience of mappers
+QM-1: Tag completeness
+First, it is necessary to define what is critical infrastructure?. To do that different literature1 is consulated, case studies reviewed and interviews are conducted (in-person, skype and via email). This has two parts: 
+QM-1.1: Dependable infrastructure.
+QM-1.2: Dependent infrastructure.
+QM-1.1: Dependable infrastructure
+This gives insight about what infrastructure people depend on in the case of an emergency. This can be infrastructure that can be converted into shelter or can be dependable in the case of disaster such as injury, relocation and water etc. These are concluded as follows:
+Hospitals
+Place of worship
+Schools
+Government offices
+Bridges
+Water and fuel amenities
+Sanitation
+Water sources
+Fire brigade
+Building companies 
+Bus and train station
+For the sake of this research the most important ones are short-listed for analysing the tag completeness. This has been short-listed according to the emphasis in literature and interviews.
+Hospitals
+School
+Place of worship
+Government offices
+Bridges
+Water sources
+
+Now, there is a matter of tag selection. Which tags should be checked for completion. This is taken from the tagging scheme of METEOR Project in Tanzania and the tagging priorities mentioned by the Red Cross officials. Both of these parties have different interests which will discussed in the stakeholder section.
+QM-1.2: Dependent infrastructure
+The other side of the pre-disaster mapping is to see where people live and how can the information on it can help in predicting disaster impact. So, in this case are buildings in general then residential buildings. This transition is because as I am not an expert in that area and not a very experienced mapper so there might be a possibility that there are missing tags for residential, apartment, home or house tag. Same technique is used to get the tagging scheme.
+QM-2: Reliability of the critical infrastructure data
+Criteria for checking the reliability is how trustable the critical is. In order to do so first the historical mapping activity of the selected feature. If the standard deviation of the yearly change in mapped polygons is high then there is a need to assess the meta-data of that feature around the study area. 
+In this quality metric dependable infrastructure is taken. Because the completeness and tag completeness more important for the buildings. Considering Buildings reliability can be cumbersome as tag completeness is already a task that requires a considerable amount of time.
+This quality metric has 2 parts. Because there are different types of meta-data to be checked with respect to the quality standard.
+QM-2.1: Date of the edit
+QM-2.2: Edit frequency
+QM-2.1: Date of the edit
+After looking at the high SD of the critical infrastructure now it is assessed against the quality standard which is if the feature has been edited with time-stamp of within 1 year in OSM (REF). This will represent that the feature has been subjected to validation and their tags are checked regularly. Meta-data has been extract on yearly basis starting from 2014 till 2020.
+QM-2.2: Edit frequency
+More the editing frequency of a feature in OSM more it is reliable. Quality standard cannot be set the same for all the critical infrastructure because there exists heterogeneity of feature versions (No. of times feature is edited). This heterogeneity is presented in table xxx. So, quality standard set here is relative to the highest number of versions of the selected feature.
+
+Table xx: Maximum number of edit version for different critical infrastructure from meta-data extracted on 10/01/2020
+Feature
+Maximum version
+Hospital
+4
+School
+4
+Bridge
+11
+Government office
+7
+Water source
+5
+Place of worship
+5
+
+QM-3: Experience of mappers
+This quality metric is very complicated because we cannot judge objectively from the number of edits made by a certain user. Quantification of this needs more details of the mapper like linkedin profile which shows the the mapper experience outside OSM community (REF). First step is to check how the OSM data is diversified with respect to experienced mappers. To do so, top 20 mappers (w.r.t number of edits) with edits more than 10000 are taken as standard and normalised. Results show that 51% of total edits are done by top 20 mapper and the area mapped is also quite large. Then rest is below the standard but the results of these can only result in validation of that mapped area (more in NEED-FOR-ACTION plan). There is more to see than only the number of edits. Such as difference between first edit date and last edit date and how it is diversified in our study area.
+Table x2: Mappers stats
+Number of edits by top 20 mappers
+330,418
+Total edits
+644,149
+Percentage edited by top 20 mappers
+51.30 %
+
+Impact of the quality metrics
+These metrics can be classified as the completion of relief resources identification (510global). Different humanitarian organisation use different predicting variables which can only be possible if the data on the map is complete. Assessment of the predicting variables is not part of this research but to make the data on the maps in complete and reliable form. The delay in the prediction is mostly due to unavailability of the information on the maps.
+Furthermore, completion of tags beforehand can help the emergency mapper in predicting the condition of certain features. For example, if the building has a tag material:concrete and the disaster occurs it is likely expected it will cause less damage and even with poor satellite imagery there will be prediction in mind that it will less damage than wood house for instance. But if there is no information available for the mapper then it can cause confusion and delays.
+More the details of any feature can come in use for various purposes. For this research purpose of flood pre-disaster is taken into account. Example is taken to see the impact of the missing tags of hospital specialisation on the number of houses (residential, apartment, home and house) is shown in figure xx. If the numbers are observed number of houses within 1km of hospitals that can be affected by the missing tag “health-care” which is considered as essential information dropped from 50227 to 24621. Meaning that 25606 house can be affected by the missing information of hospital specialisation. 
+
+Figurexx: Number of houses within 1km of hospitals in Dar es Salaam
+For the sake of simplicity binary visualisation (affected vs unaffected) of number of houses that can be affected by the missing information of hospitals in the selected bounding box of Dar es Salaam. Figure xx2 shows the area where houses can be affected by the missing tags. This is to check how much impact does missing tags of the hospitals can have in the bounding box. Furthermore, binary visualisation (affected vs unaffected) is preferable as from figure xx it is clear from figure xx that there is less variation with respect to the number of houses. More grids lies in 50-100 class (see stats in annex II). 
+
+Figure x1: houses that can be impacted by the missing information of hospitals
+
+
