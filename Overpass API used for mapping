@@ -1,0 +1,125 @@
+APIs used for Mapping
+To get the stats of mappers in the area
+
+[out:csv(user,total)][timeout:25];
+
+(
+  nwr["building"]({{bbox}});
+
+);
+for (user()){
+    make stat 
+     "user"=_.val,
+     nodes=count(nodes),
+     ways=count(ways),
+     relations=count(relations),
+     total = count(nodes) + count(ways) + count(relations);
+    out;
+};
+
+Check the local mappers range and less than 100 edits mappers were chosen
+Total buildings
+[out:json][timeout:3600];
+
+(
+  nwr["building"]({{bbox}});
+
+);
+out body;
+>;
+out skel qt;
+
+To get the data edited by all unexperienced mappers
+[out:json][bbox:{{bbox}}];
+way(user:”janeth mlinga”)[“building”];
+(._;>;);
+out meta;
+
+
+
+
+
+
+
+Overlapping of building foot-prints
+
+
+Unmapped area
+
+Another aspects is that areas that are mapped by the inexperienced mapper can be incomplete.
+
+Wrong edits 
+According to the profile the buildings are close to one another and there are building standalone.
+[out:json][bbox:{{bbox}}];
+(
+nwr(user:"DoubleA")["building"];
+nwr(user:"WalkerB")["building"];
+nwr(user:"Olclarkey19")["building"];
+nwr(user:"Palolo")["building"];
+nwr(user:"FUS RO DAH66")["building"];
+nwr(user:"andbox")["building"];
+nwr(user:"Kass Prod")["building"];
+nwr(user:"Sal73x")["building"];
+nwr(user:"Spidey10")["building"];
+nwr(user:"jharpster")["building"];
+nwr(user:"TazaraLynn")["building"];
+
+
+);
+(._;>;);
+out meta;
+
+
+
+This picture shows the area mapped by the experienced mapper.
+Query for getting the roads near the buildings and this will see if there are no buildings nearby.
+[out:json][timeout:360];
+nwr["building"]({{bbox}}); 
+way(around:5)["highway"]({{bbox}});
+out body;
+>;
+out skel qt;
+
+[out:json][bbox:{{bbox}}][timeout:800];
+
+
+(
+  way[highway];
+)->.highway; 
+
+(
+  way[building];
+)->.building;
+  
+(
+  way.highway(around.building:0.5);
+
+)->.highwayNearBuilding; 
+
+// determine banks far from police stations
+(.highway; - .highwayNearBuilding;);
+
+// return node, ways, relations as determined above
+out geom meta;
+
+[out:json][bbox:{{bbox}}][timeout:800];
+
+
+(
+  way[highway];
+)->.highway; 
+
+(
+  way[building];
+)->.building;
+  
+(
+  way.highway(around.building:0.5);
+
+)->.highwayNearBuilding; 
+
+// determine banks far from police stations
+(.highway; - .highwayNearBuilding;);
+
+// return node, ways, relations as determined above
+out geom meta;
